@@ -1,0 +1,95 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body and background */
+body {
+  background: linear-gradient(to bottom, #40E0D0, #6699CC);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navigation bar */
+nav {
+  background-color: rgba(0, 128, 128, 0.9);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* Headings */
+h1, h2 {
+  color: #008080;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Cake Image */
+.cake-img {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 2px solid #008080;
+}
+
+/* Input fields for calculator */
+input, select, button {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #008080;
+}
+
+button {
+  background-color: #008080;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #40E0D0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0,128,128,0.8);
+  color: #fff;
+  margin-top: 40px;
+  border-radius: 0 0 15px 15px;
+}
