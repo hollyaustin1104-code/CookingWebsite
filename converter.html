@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking Conversion Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div><strong>Cooking Conversions</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="najie.html">Najie's Perspective</a>
+      <a href="converter.html">Converter</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Conversion Calculator</h1>
+    <p>Convert between cups, fluid ounces, weight ounces, grams, tablespoons, and milliliters.</p>
+
+    <label for="value">Amount:</label>
+    <input type="number" id="value" placeholder="Enter a number">
+
+    <label for="from">From:</label>
+    <select id="from">
+      <option value="cups">Cups</option>
+      <option value="fl-oz">Fluid Ounces</option>
+      <option value="oz-weight">Ounces (Weight)</option>
+      <option value="grams">Grams</option>
+      <option value="tbsp">Tablespoons</option>
+      <option value="ml">Milliliters</option>
+    </select>
+
+    <label for="to">To:</label>
+    <select id="to">
+      <option value="cups">Cups</option>
+      <option value="fl-oz">Fluid Ounces</option>
+      <option value="oz-weight">Ounces (Weight)</option>
+      <option value="grams">Grams</option>
+      <option value="tbsp">Tablespoons</option>
+      <option value="ml">Milliliters</option>
+    </select>
+
+    <button onclick="convert()">Convert</button>
+
+    <h2 id="result"></h2>
+  </div>
+
+  <footer>
+    &copy; 2026 Cooking Conversions Project
+  </footer>
+
+  <script>
+    function convert() {
+      const value = parseFloat(document.getElementById('value').value);
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+      if (isNaN(value)) {
+        document.getElementById('result').innerText = "Please enter a number.";
+        return;
+      }
+
+      // Conversion rates (basic approximate values for sugar/flour)
+      const conversionTable = {
+        'cups': { 'cups': 1, 'fl-oz': 8, 'oz-weight': 8, 'grams': 200, 'tbsp': 16, 'ml': 240 },
+        'fl-oz': { 'cups': 0.125, 'fl-oz': 1, 'oz-weight': 1, 'grams': 28, 'tbsp': 2, 'ml': 30 },
+        'oz-weight': { 'cups': 0.125, 'fl-oz': 1, 'oz-weight': 1, 'grams': 28, 'tbsp': 2, 'ml': 30 },
+        'grams': { 'cups': 0.005, 'fl-oz': 0.035, 'oz-weight': 0.035, 'grams': 1, 'tbsp': 0.08, 'ml': 1 },
+        'tbsp': { 'cups': 0.0625, 'fl-oz': 0.5, 'oz-weight': 0.5, 'grams': 12.5, 'tbsp': 1, 'ml': 15 },
+        'ml': { 'cups': 0.00417, 'fl-oz': 0.0333, 'oz-weight': 0.0333, 'grams': 1, 'tbsp': 0.0667, 'ml': 1 }
+      };
+
+      const result = value * conversionTable[from][to];
+      document.getElementById('result').innerText = `${value} ${from} = ${result.toFixed(2)} ${to}`;
+    }
+  </script>
+</body>
+</html>
